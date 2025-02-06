@@ -14,11 +14,6 @@ async function executeSqlFile(filePath) {
 }
 
 async function initializeDatabase() {
-  if (process.env.RUN_MIGRATIONS !== 'true') {
-      console.log('Skipping database initialization (RUN_MIGRATIONS is not set to true)');
-      return;
-    }
-
   try {
     console.log('Starting database initialization...');
     const migrationPath = path.join(__dirname, '../migrations/init.sql');
